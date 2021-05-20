@@ -6,7 +6,8 @@ name: deploy backend
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches:
+      -master
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -26,7 +27,5 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: deploy backend
         run: |
-          sudo apt install git
-          git clone git@github.com:truckbux/backend.git
           git status
           
